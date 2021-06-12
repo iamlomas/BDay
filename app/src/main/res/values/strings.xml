@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BDay</string>
+    <string name="happy_birthday">Happy Birthday</string>
+    <string name="click_here">Click here to play music!</string>
+    <string name="done">Done</string>
+    <string name="select_your_birth_date">Select your birthdate here</string>
+    <string name="enter_your_first_name">Enter your first name</string>
+</resources>
