@@ -3,8 +3,11 @@ package com.iamlomas.bday
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.iamlomas.birthday_calculator.BirthdayCalculator
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -88,13 +91,33 @@ class MainActivity : AppCompatActivity() {
                             startActivity(it)
                         }
                     } else {
-                        Intent(this, TimeRemainingActivity::class.java).apply {
-                            putExtra("Day", selectedDay)
-                            putExtra("Month", selectedMonth)
-                            putExtra("Year", selectedYear)
-                        }.also {
-                            startActivity(it)
+                        val timeRemainingDialog = MaterialAlertDialogBuilder(
+                            this,
+                            R.style.MyThemeOverlay_MaterialComponents_MaterialAlertDialog
+                        ).apply {
+                            val layout =
+                                layoutInflater.inflate(R.layout.time_remaining_dialog, null)
+                            setView(layout)
+
+                            layout.findViewById<TextView>(R.id.tvCurrentAge).text =
+                                "Currently you're \n${
+                                    BirthdayCalculator().calculateAge(
+                                        selectedYear,
+                                        selectedMonth,
+                                        selectedDay
+                                    )
+                                }\n old!"
+                            layout.findViewById<TextView>(R.id.tvNextCelebration).text = "${
+                                BirthdayCalculator().calculateNextBirthDate(
+                                    selectedYear,
+                                    selectedMonth,
+                                    selectedDay
+                                )
+                            } left for your next Birth Day celebration!"
+
+                            create()
                         }
+                        timeRemainingDialog.show()
                     }
                 }
             }
