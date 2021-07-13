@@ -4,7 +4,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.bday.IntervalCalculator
+import com.iamlomas.birthday_calculator.BirthdayCalculator
 import kotlinx.android.synthetic.main.activity_display_name.*
 import java.util.*
 
@@ -28,7 +28,7 @@ class DisplayNameActivity : AppCompatActivity() {
         tvName.text = intent.getStringExtra("First_Name")
 
         tvCurrentAge.text = "Congrats! Now you're\n${
-            IntervalCalculator.calculateAge(
+            BirthdayCalculator().calculateAge(
                 selectedYear,
                 selectedMonth,
                 selectedDay

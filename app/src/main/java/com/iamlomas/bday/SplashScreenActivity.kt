@@ -2,9 +2,9 @@ package com.iamlomas.bday
 
 import android.graphics.Color
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View.TEXT_ALIGNMENT_CENTER
+import androidx.appcompat.app.AppCompatActivity
 import com.lomas.androidSplashScreen.AndroidSplashScreen
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -12,13 +12,13 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val splashScreen: AndroidSplashScreen = AndroidSplashScreen(this).apply {
-            this.withFullScreen()
-                .withTargetActivity(MainActivity::class.java)
-                .withSplashTimeOut(2500)
-                .withBackgroundColor(Color.WHITE)
-                .withLogo(R.drawable.celebration)
-                .withBelowLogoText("BDay")
-                .withFooterText("Created by Lomas")
+            withFullScreen()
+            withTargetActivity(MainActivity::class.java)
+            withSplashTimeOut(2500)
+            withBackgroundColor(Color.WHITE)
+            withLogo(R.drawable.celebration)
+            withBelowLogoText("BDay")
+            withFooterText("Created by Lomas")
         }
 
         splashScreen.apply {
