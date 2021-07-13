@@ -9,7 +9,6 @@
         android:backgroundTint="@color/blue_chalk_translucent"
         android:backgroundTintMode="multiply"
         android:keepScreenOn="true"
-        android:orientation="vertical"
         android:padding="16dp"
         tools:context=".DisplayNameActivity">
 
@@ -18,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:alpha="1"
+            android:backgroundTint="#000000"
             android:backgroundTintMode="src_over"
             android:bufferType="normal"
             android:fontFamily="@font/pacifico"
@@ -37,7 +36,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:alpha="1"
             android:backgroundTint="#000000"
             android:backgroundTintMode="src_over"
             android:fontFamily="@font/pacifico"
